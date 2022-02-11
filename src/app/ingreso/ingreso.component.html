@@ -1,0 +1,7 @@
+  <div class="wrapper fadeInDown">
+      <div id="formContent">
+          <input type="email" [(ngModel)]="Correo" class="fadeIn second" placeholder="Correo">
+          <input type="text" [(ngModel)]="Clave"  class="fadeIn third" placeholder="Clave">
+          <input type="button" (click)="loginUser()" *ngIf="usuario.Id==0" class="fadeIn fourth" value="Ingresar">
+      </div>
+    </div>

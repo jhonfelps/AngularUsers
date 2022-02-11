@@ -1,0 +1,47 @@
+<div class="form-group row">
+    <label class="col-sm-2 col-form-label">Nombre</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Nombre"
+        placeholder="Ingresa el nombre">
+    </div>
+    <label class="col-sm-2 col-form-label">Apellido</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Apellido"
+        placeholder="Ingresa el apellido">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Tipo de Documento</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Tipo_documento"
+        placeholder="Tipo de Documento">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Documento</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Documento"
+        placeholder="Nro. Documento">
+    </div>
+
+    <label class="col-sm-2 col-form-label">Correo</label>
+    <div class="col-sm-10">
+        <input type="email" class="form-control" [(ngModel)]="Correo"
+        placeholder="Correo" required>
+    </div>
+
+    <label class="col-sm-2 col-form-label">Clave</label>
+    <div class="col-sm-10">
+        <input type="text" class="form-control" [(ngModel)]="Clave"
+        placeholder="Ingresa la Clave" required>
+    </div>
+    <label class="col-sm-2 col-form-label">Rol</label>
+    <div class="col-sm-10">
+      <select class="form-control" [(ngModel)]="Rol">
+        <option value="administrador">Administrador</option>
+        <option value="comprador">Comprador</option>
+      </select>
+    </div>
+</div>
+
+<button (click)="addUser()" *ngIf="user.Id==0" class="btn btn-primary" style="float:right;">Agregar</button>
+
+<button (click)="updateUser()" *ngIf="user.Id!=0" class="btn btn-primary" style="float:right;">Editar</button>

@@ -1,0 +1,70 @@
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary float-right m-2" style="float: right;"
+(click)="goOut()">
+    Salir
+  </button>
+<button type="button" class="btn btn-primary float-right m-2" style="float: right;"
+ data-bs-toggle="modal" data-bs-target="#exampleModal"
+(click)="addClick()"
+data-backdrop="static" data-keyboard="false"
+>
+    Agregar Usuario
+  </button>
+  <button type="button" class="btn btn-primary float-right m-2" style="float: left;"
+  (click)="goToProducts()">
+      Productos
+    </button>
+
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-xl">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">{{ModalTitle}}</h5>
+          <button type="button" class="btn-close"
+           data-bs-dismiss="modal" aria-label="Close"
+           (click)="closeClick()">
+           <span aria-hidden="true">&times;</span>
+        </button>
+        </div>
+        <div class="modal-body">
+          <app-add-edit-user [user]="user" *ngIf="ActivateAddEditUserComp"></app-add-edit-user>
+        </div>
+      </div>
+    </div>
+  </div>
+<table class="table table-striped">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>Nombre</th>
+            <th>Apellido</th>
+            <th>Tipo Documento</th>
+            <th>Documento</th>
+            <th>Correo</th>
+            <th>Clave</th>
+            <th>Opciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let dataItem of UsuarioList">
+            <td>{{dataItem.Id}}</td>
+            <td>{{dataItem.Nombre}}</td>
+            <td>{{dataItem.Apellido}}</td>
+            <td>{{dataItem.Tipo_documento}}</td>
+            <td>{{dataItem.Documento}}</td>
+            <td>{{dataItem.Correo}}</td>
+            <td>{{dataItem.Clave}}</td>
+            <td>
+                <button type="button" class="btn btn-ligth mr-1"
+                data-bs-toggle="modal" data-bs-target="#exampleModal"
+                (click)="editClick(dataItem)">
+                Editar</button>
+            </td>
+            <td>
+                <button type="button" class="btn btn-ligth mr-1"
+                (click)="deleteClick(dataItem)">Borrar</button>
+            </td>
+        </tr>
+    </tbody>
+</table>
